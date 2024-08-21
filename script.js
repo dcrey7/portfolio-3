@@ -300,12 +300,15 @@ function updateContent() {
                     if (typeof content[0] === 'object') {
                         // For education and experience sections
                         let html = '';
-                        content.forEach(item => {
+                        content.forEach((item, index) => {
                             html += `<h4>${item.title}</h4><ul>`;
                             item.points.forEach(point => {
                                 html += `<li>${point}</li>`;
                             });
                             html += '</ul>';
+                            if (sectionKey === 'experience' && index < content.length - 1) {
+                                html += '<hr class="experience-divider">';
+                            }
                         });
                         contentElement.innerHTML = html;
                     } else {
@@ -318,8 +321,7 @@ function updateContent() {
                 }
             }
         }
-    });
-}
+    })}
 
 function toggleLanguage() {
     isEnglish = !isEnglish;

@@ -51,6 +51,12 @@ body.light-mode {
     box-sizing: border-box;
 }
 
+#main-content ul li {
+    padding-left: 20px;
+    text-indent: -20px;
+    margin-left: 20px;
+}
+
 .box {
     background-color: var(--squircle-bg-dark);
     backdrop-filter: blur(10px);
@@ -363,4 +369,16 @@ body.light-mode #main-content {
     .nav-link {
         margin: 5px;
     }
+}
+
+.experience-divider {
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 20px 0;
+}
+
+/* For light mode */
+body.light-mode .experience-divider {
+    background: rgba(0, 0, 0, 0.2);
 }
