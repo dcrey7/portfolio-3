@@ -351,7 +351,7 @@ function toggleMode() {
     const isLightMode = body.classList.contains('light-mode');
     
     const modeToggle = document.getElementById('mode-toggle');
-    modeToggle.innerHTML = `<span class="button-icon">${isLightMode ? '🌑' : '☀️'}</span> ${isLightMode ? 'Dark Mode' : 'Light Mode'}`;
+    modeToggle.innerHTML = `<span class="button-icon">${isLightMode ? '🌑' : '☀️'}</span> ${isLightMode ? 'Dark mode' : 'Light mode'}`;
 
     // Ensure text color is set correctly
     body.style.color = isLightMode ? 'var(--text-color-light)' : 'var(--text-color-dark)';
