@@ -5,37 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhishek Thomas - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
     <div id="webgl-container"></div>
 
     <div class="portfolio-container">
-        <!-- Left Box -->
         <div class="box left-box">
             <div class="profile-section">
-                <div id="profile-picture" class="circular-profile" ></div>
+                <div id="profile-picture" class="circular-profile"></div>
                 <h1 id="name">Abhishek Thomas</h1>
                 <h2 id="title">Data Scientist</h2>
             </div>
-            
-            <div class="button-container">
-                <button id="mode-toggle" class="icon-button">☀️</button>
-                <button id="lang-toggle" class="icon-button">FR</button>
-                <a href="https://github.com/dcrey7" id="github-btn" class="icon-button" target="_blank">🖥️</a>
-                <a href="https://www.linkedin.com/in/dcrey7/" id="linkedin-btn" class="icon-button" target="_blank">🔗</a>
-            </div>
-            
+
+            <button id="mode-toggle" class="nav-button">
+                <span class="button-icon">☀️</span> Light Mode
+            </button>
+
+            <button id="lang-toggle" class="nav-button">
+                <span class="button-icon">🌐</span> Translate to French
+            </button>
+
+            <a href="https://github.com/dcrey7" id="github-btn" class="nav-button" target="_blank">
+                <span class="button-icon">🖥️</span> GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/dcrey7/" id="linkedin-btn" class="nav-button" target="_blank">
+                <span class="button-icon">🔗</span> LinkedIn
+            </a>
+
             <div class="contact-info">
-                <p><span class="icon">📧</span> <span id="email-info" class="info-text">abhishek01789@gmail.com</span></p>
-                <p><span class="icon">📞</span> <span id="phone-info" class="info-text">7202849884</span></p>
-                
+                <div class="nav-button">
+                    <span class="button-icon">📧</span>
+                    <span id="email-info" class="info-text">abhishek01789@gmail.com</span>
+                </div>
+                <div class="nav-button">
+                    <span class="button-icon">📞</span>
+                    <span id="phone-info" class="info-text">7202849884</span>
+                </div>
             </div>
-            
-            <a href="path/to/your/resume.pdf" id="resume-btn" class="download-btn" target="_blank">Download Resume</a>
+
+            <a href="path/to/your/resume.pdf" id="resume-btn" class="nav-button download-btn" target="_blank">
+                <span class="button-icon">📃</span> Download Resume
+            </a>
         </div>
 
-        <!-- Right Box -->
         <div class="box right-box">
             <nav id="main-nav">
                 <a href="#" class="nav-link active" data-target="overview">Overview</a>
@@ -45,28 +58,33 @@
                 <a href="#" class="nav-link" data-target="certification">Certification</a>
                 <a href="#" class="nav-link" data-target="extras">Extras</a>
             </nav>
-            
+
             <div id="main-content">
                 <div id="overview" class="section active">
                     <h3>Overview</h3>
                     <p></p>
                 </div>
+
                 <div id="skills" class="section">
                     <h3>Skills</h3>
                     <ul></ul>
                 </div>
+
                 <div id="education" class="section">
                     <h3>Education</h3>
                     <div></div>
                 </div>
+
                 <div id="experience" class="section">
                     <h3>Experience</h3>
                     <div></div>
                 </div>
+
                 <div id="certification" class="section">
                     <h3>Certifications</h3>
                     <ul></ul>
                 </div>
+
                 <div id="extras" class="section">
                     <h3>Extracurricular</h3>
                     <ul></ul>
@@ -77,7 +95,8 @@
 
     <div id="tooltip"></div>
 
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="webgl.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

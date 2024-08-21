@@ -321,13 +321,17 @@ function updateContent() {
                 }
             }
         }
-    })}
+    });
+
+    // Ensure text color is set correctly
+    document.body.style.color = document.body.classList.contains('light-mode') ? 'var(--text-color-light)' : 'var(--text-color-dark)';
+}
 
 function toggleLanguage() {
     isEnglish = !isEnglish;
     updateContent();
     const langToggle = document.getElementById('lang-toggle');
-    langToggle.textContent = isEnglish ? 'FR' : 'GB';
+    langToggle.innerHTML = `<span class="button-icon">🌐</span> ${isEnglish ? 'Translate to French' : 'Traduire en anglais'}`;
 }
 
 function showSection(sectionId) {
@@ -339,6 +343,23 @@ function showSection(sectionId) {
             section.classList.remove('active');
         }
     });
+}
+
+function toggleMode() {
+    const body = document.body;
+    body.classList.toggle('light-mode');
+    const isLightMode = body.classList.contains('light-mode');
+    
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.innerHTML = `<span class="button-icon">${isLightMode ? '🌑' : '☀️'}</span> ${isLightMode ? 'Dark Mode' : 'Light Mode'}`;
+
+    // Ensure text color is set correctly
+    body.style.color = isLightMode ? 'var(--text-color-light)' : 'var(--text-color-dark)';
+
+    // Update background if you have a function for that
+    if (typeof updateBackgroundMode === 'function') {
+        updateBackgroundMode(isLightMode);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -363,10 +384,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Dark mode toggle
     const modeToggle = document.getElementById('mode-toggle');
-    modeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('light-mode');
-        this.textContent = document.body.classList.contains('light-mode') ? '🌑' : '☀️';
-    });
+    modeToggle.addEventListener('click', toggleMode);
 
     // Copy email and phone to clipboard
     const emailInfo = document.getElementById('email-info');
