@@ -14,7 +14,6 @@
     --scrollbar-thumb-hover-light: rgba(0, 0, 0, 0.2);
 }
 
-
 body, html {
     margin: 0;
     padding: 0;
@@ -24,7 +23,7 @@ body, html {
     width: 100%;
     height: 100%;
     font-size: 16px;
-    overflow: hidden;
+    overflow: auto;
 }
 
 body {
@@ -47,8 +46,8 @@ body.light-mode {
 .portfolio-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: stretch;
+    min-height: 95vh;
     padding: 20px;
     box-sizing: border-box;
 }
@@ -60,6 +59,8 @@ body.light-mode {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.5s ease;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 body.light-mode .box {
@@ -69,18 +70,17 @@ body.light-mode .box {
 .left-box {
     width: 25%;
     margin-right: 40px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    height: 90vh;
+    justify-content: space-between;
+    overflow-y: hidden;
 }
 
 .right-box {
     width: 60%;
-    display: flex;
-    flex-direction: column;
     padding: 20px;
-    height: 90vh;
+    overflow-y: auto;
 }
 
 .profile-section {
@@ -89,8 +89,8 @@ body.light-mode .box {
 }
 
 .circular-profile {
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     background-size: cover;
     background-position: center;
@@ -105,12 +105,12 @@ body.light-mode .box {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 1.6em;
     margin: 10px 0 5px;
 }
 
 h2 {
-    font-size: 1.2em;
+    font-size: 1em;
     margin: 0 0 20px;
     opacity: 0.8;
 }
@@ -125,8 +125,8 @@ h2 {
     background: none;
     border: none;
     color: inherit;
-    padding: 10px 15px;
-    font-size: 20px;
+    padding: 8px 12px;
+    font-size: 18px;
     text-align: left;
     cursor: pointer;
     display: flex;
@@ -135,6 +135,7 @@ h2 {
     width: 100%;
     box-sizing: border-box;
     text-decoration: none;
+    border-radius: 10px;
 }
 
 .nav-button:hover {
@@ -148,7 +149,7 @@ body.light-mode .nav-button:hover {
 
 .button-icon {
     margin-right: 15px;
-    font-size: 20px;
+    font-size: 16px;
     width: 20px;
     display: inline-block;
     text-align: center;
@@ -161,7 +162,7 @@ body.light-mode .nav-button:hover {
 }
 
 .contact-info .nav-button {
-    padding: 10px 15px;
+    padding: 8px 12px;
 }
 
 .info-text {
@@ -173,7 +174,7 @@ body.light-mode .nav-button:hover {
 .download-btn {
     background-color: #4CAF50;
     color: white;
-    padding: 15px;
+    padding: 12px;
     border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
@@ -192,17 +193,19 @@ body.light-mode .nav-button:hover {
 #main-nav {
     display: flex;
     justify-content: space-around;
-    padding: 5px ;
+    padding: 5px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
 }
 
 .nav-link {
     color: inherit;
     text-decoration: none;
-    font-size: 18px;
-    padding: 2% 4% 2% 4%;
+    font-size: 14px;
+    padding: 2% 4%;
     border-radius: 10px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 5px;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -233,18 +236,18 @@ body.light-mode .nav-link.active {
 }
 
 h3 {
-    font-size: 1.8em;
+    font-size: 1.6em;
     margin-bottom: 20px;
 }
 
 h4 {
-    font-size: 1.4em;
+    font-size: 1.2em;
     margin-top: 20px;
     margin-bottom: 10px;
 }
 
 ul {
-    padding-left: 30px;
+    padding-left: 20px;
     list-style-type: disc;
 }
 
@@ -252,9 +255,7 @@ li {
     margin-bottom: 5px;
     padding-left: 5px;
     text-indent: 0px;
-   
 }
-
 
 #tooltip {
     position: fixed;
@@ -281,88 +282,139 @@ body.light-mode .experience-divider {
 }
 
 /* Custom scrollbar styles */
+.right-box::-webkit-scrollbar,
 #main-content::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 }
 
+.right-box::-webkit-scrollbar-track,
 #main-content::-webkit-scrollbar-track {
     background: var(--scrollbar-bg-dark);
     border-radius: 5px;
 }
 
+.right-box::-webkit-scrollbar-thumb,
 #main-content::-webkit-scrollbar-thumb {
     background: var(--scrollbar-thumb-dark);
     border-radius: 5px;
 }
 
+.right-box::-webkit-scrollbar-thumb:hover,
 #main-content::-webkit-scrollbar-thumb:hover {
     background: var(--scrollbar-thumb-hover-dark);
 }
 
 /* Light mode scrollbar styles */
+body.light-mode .right-box::-webkit-scrollbar-track,
 body.light-mode #main-content::-webkit-scrollbar-track {
     background: var(--scrollbar-bg-light);
 }
 
+body.light-mode .right-box::-webkit-scrollbar-thumb,
 body.light-mode #main-content::-webkit-scrollbar-thumb {
     background: var(--scrollbar-thumb-light);
 }
 
+body.light-mode .right-box::-webkit-scrollbar-thumb:hover,
 body.light-mode #main-content::-webkit-scrollbar-thumb:hover {
     background: var(--scrollbar-thumb-hover-light);
 }
 
 /* For Firefox */
+.right-box,
 #main-content {
     scrollbar-width: thin;
     scrollbar-color: var(--scrollbar-thumb-dark) var(--scrollbar-bg-dark);
 }
 
+body.light-mode .right-box,
 body.light-mode #main-content {
     scrollbar-color: var(--scrollbar-thumb-light) var(--scrollbar-bg-light);
 }
 
 /* Responsive design */
+@media (min-width: 1201px) {
+    .left-box, .right-box {
+        height: calc(95vh - 40px);
+    }
+    
+    .left-box {
+        overflow-y: hidden;
+    }
+    
+    .right-box {
+        overflow-y: auto;
+    }
+}
+
 @media (max-width: 1200px) {
     .portfolio-container {
         flex-direction: column;
-        height: auto;
+        align-items: center;
     }
 
-    .box {
+    .left-box, .right-box {
         width: 90%;
-        height: auto;
         margin: 10px 0;
     }
 
     .left-box {
-        padding-bottom: 20px;
+        max-height: none;
+        overflow-y: hidden;
     }
 
     .right-box {
         max-height: 60vh;
+        overflow-y: auto;
+    }
+
+    .circular-profile {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 1.4em;
+    }
+
+    h2 {
+        font-size: 0.9em;
     }
 }
 
 @media (max-width: 600px) {
+    .portfolio-container {
+        padding: 10px;
+    }
+
+    .left-box, .right-box {
+        width: 100%;
+        padding: 15px;
+    }
+
     .circular-profile {
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
     }
 
     h1 {
-        font-size: 1.8em;
+        font-size: 1.2em;
     }
 
     h2 {
-        font-size: 1em;
+        font-size: 0.8em;
+    }
+
+    .nav-button, .nav-link {
+        font-size: 12px;
+        padding: 6px 10px;
     }
 
     #main-nav {
-        flex-wrap: wrap;
-    }
-
-    .nav-link {
-        margin: 5px;
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
     }
 }
+
