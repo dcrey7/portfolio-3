@@ -12,6 +12,7 @@
     --scrollbar-bg-light: rgba(0, 0, 0, 0.05);
     --scrollbar-thumb-light: rgba(0, 0, 0, 0.1);
     --scrollbar-thumb-hover-light: rgba(0, 0, 0, 0.2);
+    --resume-button-color: #4CAF50;
 }
 
 body, html {
@@ -172,7 +173,7 @@ body.light-mode .nav-button:hover {
 }
 
 .download-btn {
-    background-color: #4CAF50;
+    background-color: var(--resume-button-color);
     color: white;
     padding: 12px;
     border-radius: 10px;
@@ -182,12 +183,18 @@ body.light-mode .nav-button:hover {
     margin-top: auto;
     display: flex;
     align-items: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .download-btn:hover {
-    background-color: #45a049;
+    background-color: var(--resume-button-color);
     transform: scale(1.05);
+}
+
+body.light-mode .download-btn,
+body.light-mode .download-btn:hover {
+    background-color: var(--resume-button-color);
+    color: white;
 }
 
 #main-nav {
@@ -345,6 +352,10 @@ body.light-mode #main-content {
     .right-box {
         overflow-y: auto;
     }
+
+    .right-box #main-content {
+        font-size: 13px; /* Larger text for desktop */
+    }
 }
 
 @media (max-width: 1200px) {
@@ -379,6 +390,10 @@ body.light-mode #main-content {
 
     h2 {
         font-size: 0.9em;
+    }
+
+    .right-box #main-content {
+        font-size: 10px; /* Smaller text for laptop */
     }
 }
 
@@ -423,5 +438,9 @@ body.light-mode #main-content {
         text-align: center;
         padding: 8px 5px;
         margin: 2px;
+    }
+
+    .right-box #main-content {
+        font-size: 7px; /* Smallest text for mobile */
     }
 }
