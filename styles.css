@@ -1,3 +1,8 @@
+@viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+
 :root {
     --squircle-bg-dark: rgba(0, 0, 0, 0.7);
     --squircle-bg-light: rgba(255, 255, 255, 0.7);
@@ -15,7 +20,7 @@
     --resume-button-color: #4CAF50;
 }
 
-body, html {
+html, body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -25,10 +30,15 @@ body, html {
     height: 100%;
     font-size: 16px;
     overflow: auto;
+    min-height: 100%;
+    min-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
     transition: background-color 0.5s ease, color 0.5s ease;
+    position: relative;
+    background-attachment: fixed;
 }
 
 body.light-mode {
@@ -41,6 +51,8 @@ body.light-mode {
     left: 0;
     width: 100%;
     height: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
     z-index: -1;
 }
 
@@ -48,7 +60,8 @@ body.light-mode {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    min-height: 90vh;
+    min-height: 100vh;
+    width: 100%;
     padding: 20px;
     box-sizing: border-box;
 }
@@ -398,8 +411,14 @@ body.light-mode #main-content {
 }
 
 @media (max-width: 768px) {
+    body {
+        -webkit-text-size-adjust: none;
+    }
+
     .portfolio-container {
         padding: 15px;
+        min-height: 100vh;
+        height: auto;
     }
 
     .left-box, .right-box {
