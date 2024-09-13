@@ -116,7 +116,7 @@ const translations = {
                 fr: [
                     {
                         title: "MSc. - Emlyon Business School, Science des Données & Stratégie d'Intelligence Artificielle (2024-2026)",
-                        points: ["Maîtrise ès Sciences en Science des Données et Stratégie d'Intelligence Artificielle"]
+                        points: ["Maîtrise ès Sciences en Science des Données et Stratégie d'Intelligence Artificielle "]
                     },
                     {
                         title: "B.Tech - Institut National de Technologie Sardar Vallabhbhai, Surat, Génie Mécanique (2015-2019)",
