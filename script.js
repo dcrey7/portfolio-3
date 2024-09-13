@@ -85,79 +85,73 @@ const translations = {
             }
         },*/ 
 		
-	education: {
-    title: { en: "Education", fr: "Éducation" },
-    content: {
-        en: [
-            {
-                title: "PGPDM - University of Chicago & Jigsaw Academy, Bangalore, (2020-2021)",
-                points: [
-                    "Built probabilty of legal classification and parking detection algorithm",
-                    
-                ]
-            },
-            {
-                title: "B.Tech - Sardar Vallabhbhai National Institute of Technology, Surat , (2015-2019)",
-                points: [
-                    "Bachelors of Technology in Mechanical Engineering",
-					"Electives - Robotics, Marketing, Cleaner technologies, Entrepreneurship-MSME"
-                    
-                ]
-            },
-            {
-                title: "XII - Delhi Private School, Sharjah,(2014-2015)",
-                points: [
-                    "Subjects - Physics, Chemistry, Maths, Computer Science, English",
-                   
-                ]
-            },
-            {
-                title: "X - Delhi Private School, Sharjah(2014-2015)",
-                points: [
-                    "Subjects - Science, Maths, Social science, English, Hindi"
-                    
-                ]
-            }
-        ],
-        fr: [
-            {
-                title: "PGPDM - Université de Chicago & Jigsaw Academy, Bangalore, (2020-2021)",
-                points: [
-                    "Développement d'un algorithme de classification juridique probabiliste et de détection de stationnement"
-                ]
-            },
-            {
-                title: "B.Tech - Institut National de Technologie Sardar Vallabhbhai, Surat, (2015-2019)",
-                points: [
-                    "Licence en technologie, spécialisation en génie mécanique",
-                    "Cours optionnels - Robotique, Marketing, Technologies propres, Entrepreneuriat-PME"
-                ]
-            },
-            {
-                title: "XII - Delhi Private School, Sharjah, (2014-2015)",
-                points: [
-                    "Matières - Physique, Chimie, Mathématiques, Informatique, Anglais"
-                ]
-            },
-            {
-                title: "X - Delhi Private School, Sharjah, (2014-2015)",
-                points: [
-                    "Matières - Sciences, Mathématiques, Sciences sociales, Anglais, Hindi"
+        education: {
+            title: { en: "Education", fr: "Éducation" },
+            content: {
+                en: [
+                    {
+                        title: "MSc. - Emlyon Business School, Data Science & Artificial Intelligence Strategy (2024-2026)",
+                        points: ["Masters of science in Data Science & Artificial Intelligence Strategy"]
+                    },
+                    {
+                        title: "B.Tech - Sardar Vallabhbhai National Institute of Technology, Surat, Mechanical Engineering (2015-2019)",
+                        points: [
+                            "Bachelors of Technology in Mechanical Engineering",
+                            "Electives - Robotics, Marketing, Cleaner technologies, Entrepreneurship-MSME"
+                        ]
+                    },
+                    {
+                        title: "XII - Delhi Private School, Sharjah, Science & Computer Science (2014-2015)",
+                        points: [
+                            "Subjects - Physics, Chemistry, Maths, Computer Science, English"
+                        ]
+                    },
+                    {
+                        title: "X - Delhi Private School, Sharjah, Science (2012-2013)",
+                        points: [
+                            "Subjects - Science, Maths, Social science, English, Hindi"
+                        ]
+                    }
+                ],
+                fr: [
+                    {
+                        title: "MSc. - Emlyon Business School, Science des Données & Stratégie d'Intelligence Artificielle (2024-2026)",
+                        points: []
+                    },
+                    {
+                        title: "B.Tech - Institut National de Technologie Sardar Vallabhbhai, Surat, Génie Mécanique (2015-2019)",
+                        points: [
+                            "Licence en technologie, spécialisation en génie mécanique",
+                            "Cours optionnels - Robotique, Marketing, Technologies propres, Entrepreneuriat-PME"
+                        ]
+                    },
+                    {
+                        title: "XII - Delhi Private School, Sharjah, Sciences & Informatique (2014-2015)",
+                        points: [
+                            "Matières - Physique, Chimie, Mathématiques, Informatique, Anglais"
+                        ]
+                    },
+                    {
+                        title: "X - Delhi Private School, Sharjah, Sciences (2012-2013)",
+                        points: [
+                            "Matières - Sciences, Mathématiques, Sciences sociales, Anglais, Hindi"
+                        ]
+                    }
                 ]
             }
-        ]
-    }
-},
+        },
 		
 		
 		
-       experience: {
+experience: {
     title: { en: "Experience", fr: "Expérience" },
     content: {
         en: [
             {
                 title: "Consultant - EXL Services (Sep 2022-Present)",
                 points: [
+                    "Built probability models for a leading US collections agency, improving the GINI coefficient by 6% through the use of LightGBM and Bayesian optimization.",
+                    "Conducted A/B testing for a dining rewards campaign, contributing to the segmentation of test, control, and holdout groups while actively monitoring key KPIs such as conversion rates, engagement metrics, and customer retention.",
                     "Built probability of default models using XGBoost for customer and business for a major business lending firm, improved GINI score by ~2% with the help of Bayesian optimization",
                     "Performed binning and information value analysis for feature selection, created reports using various accuracy metrics, confusion matrix, SHAP and LIME plots to interpret best models",
                     "Worked on multi touch attribution models in marketing, increased attribution to upper funnel channels by ~14% for a major US banking institution",
@@ -180,17 +174,10 @@ const translations = {
             {
                 title: "Transaction Risk Analyst - Amazon (Nov 2019-Sep 2021)",
                 points: [
-                    "Identify, analyze and eliminate the risk/fraud, which arises due to the use of debit cards/credit cards/e-checks/store cards/gift certificates on Amazon.com, Amazon.ca and Amazon.co.uk Platforms by applying the analytical skills along with the use of the tools provided",
+                    "Identified, analyzed and eliminated the risk/fraud, which arises due to the use of debit cards/credit cards/e-checks/store cards/gift certificates on Amazon.com, Amazon.ca and Amazon.co.uk Platforms by applying the analytical skills along with the use of the tools provided",
                     "Created visually impactful dashboards in Excel and Tableau for data reporting by using pivot tables and VLOOKUP",
                     "Extracted, interpreted and analyzed data to identify key metrics and transform raw data into meaningful, actionable information using SQL and Power BI",
                     "Worked on creating skill-repository functional page using python Django, HTML and CSS for transaction risk department to store additional details of Amazon employees"
-                ]
-            },
-            {
-                title: "Deep Learning Intern - Ineuron Pvt Ltd. (Aug 2020- Nov 2020)",
-                points: [
-                    "Illegal Vehicle Parking Detection - Detected and Identified various parking spots in parking lots and determined if the vehicle was parked illegally",
-                    "Contributed by preparing the data to accurately classify various vehicles and parking spots and implementing models such as Yolov4 and Detectron"
                 ]
             }
         ],
@@ -198,6 +185,8 @@ const translations = {
             {
                 title: "Consultant - EXL Services (Sep 2022-Présent)",
                 points: [
+                    "Construit des modèles de probabilité pour une importante agence de recouvrement américaine, améliorant le coefficient GINI de 6% grâce à l'utilisation de LightGBM et de l'optimisation bayésienne.",
+                    "Réalisé des tests A/B pour une campagne de récompenses de restauration, contribuant à la segmentation des groupes test, contrôle et de réserve tout en surveillant activement les KPI clés tels que les taux de conversion, les métriques d'engagement et la rétention des clients.",
                     "Construit des modèles de probabilité de défaut utilisant XGBoost pour les clients et les entreprises d'une importante société de prêts aux entreprises, améliorant le score GINI d'environ 2% grâce à l'optimisation bayésienne",
                     "Effectué une analyse de binning et de valeur d'information pour la sélection des caractéristiques, créé des rapports utilisant diverses métriques de précision, matrice de confusion, graphiques SHAP et LIME pour interpréter les meilleurs modèles",
                     "Travaillé sur des modèles d'attribution multi-touch en marketing, augmenté l'attribution aux canaux supérieurs de l'entonnoir d'environ 14% pour une grande institution bancaire américaine",
@@ -224,13 +213,6 @@ const translations = {
                     "Créé des tableaux de bord visuellement impactants dans Excel et Tableau pour le reporting de données en utilisant des tableaux croisés dynamiques et VLOOKUP",
                     "Extrait, interprété et analysé des données pour identifier les métriques clés et transformer les données brutes en informations significatives et exploitables en utilisant SQL et Power BI",
                     "Travaillé sur la création d'une page fonctionnelle de référentiel de compétences en utilisant Python Django, HTML et CSS pour le département des risques de transaction afin de stocker des détails supplémentaires sur les employés d'Amazon"
-                ]
-            },
-            {
-                title: "Stagiaire en Deep Learning - Ineuron Pvt Ltd. (Août 2020- Nov 2020)",
-                points: [
-                    "Détection de stationnement illégal de véhicules - Détecté et identifié divers emplacements de stationnement dans les parkings et déterminé si le véhicule était garé illégalement",
-                    "Contribué à la préparation des données pour classifier avec précision divers véhicules et places de stationnement et à la mise en œuvre de modèles tels que Yolov4 et Detectron"
                 ]
             }
         ]
