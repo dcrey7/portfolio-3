@@ -148,7 +148,7 @@ experience: {
     content: {
         en: [
             {
-                title: "Consultant - EXL Services (Sep 2022-July 2024)",
+                title: "Consultant - EXL Services (Sep 2022-Jul 2024)",
                 points: [
                     "Built probability models for a leading US collections agency, improving the GINI coefficient by 6% through the use of LightGBM and Bayesian optimization.",
                     "Conducted A/B testing for a dining rewards campaign, contributing to the segmentation of test, control, and holdout groups while actively monitoring key KPIs such as conversion rates, engagement metrics, and customer retention.",
