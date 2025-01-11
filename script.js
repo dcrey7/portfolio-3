@@ -222,17 +222,21 @@ experience: {
             title: { en: "Certifications", fr: "Certifications" },
             content: {
                 en: [
-                    "Gen AI with LLM 2024",
-                    "Deep generative models 2023",
-                    "Big data engineer certification 2021-2022",
-                    "Post Graduate Diploma in Data Science, Machine and Deep Learning 2019-2020",
+		    "AWS Certified Cloud Practitioner Certification by March 2025",
+		    "AWS Certified Machine Learning - Specialty by March 2025",
+                    "Gen AI with LLM 2024, deeplearning.ai",
+                    "Deep generative models 2023, Indian Institute of Science, Bangalore",
+                    "Big data engineer certification 2021-2022, Udemy",
+                    "Post Graduate Diploma in Data Science, Machine and Deep Learning 2019-2020, Udemy",
                     "Amazon Transaction Risk Investigator BRI 2019-2020"
                 ],
                 fr: [
-                    "IA générative avec LLM 2024",
-                    "Modèles génératifs profonds 2023",
-                    "Certification d'ingénieur Big Data 2021-2022",
-                    "Diplôme d'études supérieures en Science des Données, Machine Learning et Deep Learning 2019-2020",
+		    "Certification AWS Certified Cloud Practitioner d'ici mars 2025",
+		    "Certification AWS Certified Machine Learning - Specialty d'ici mars 2025",
+                    "IA générative avec LLM 2024, deeplearning.ai",
+                    "Modèles génératifs profonds 2023, Indian Institute of Science, Bangalore",
+                    "Certification d'ingénieur Big Data 2021-2022, Udemy",
+                    "Diplôme d'études supérieures en Science des Données, Machine Learning et Deep Learning 2019-2020, Udemy",
                     "Enquêteur sur les risques de transaction Amazon BRI 2019-2020"
                 ]
             }
