@@ -242,17 +242,23 @@ experience: {
             }
         },
         extras: {
-            title: { en: "Extracurricular", fr: "Activités Extrascolaires" },
+            title: { en: "Key Achievements", fr: "Réalisations Clés" },
             content: {
                 en: [
-                    "Winner of Art Chitrakala All India Emerging Artist award 2021",
-                    "Winner of IGNIS Inter NIT Football Tournament, Agartala. 2016-2017",
-                    "Chief Designer of College Magazine. 2016-2019"
+                    "<a href='https://huggingface.co/spaces/Mistral-AI-Game-Jam/team_16trial' target='_blank'>Finalist, Mistral AI Game Jam, deployed a game demo called 'Notme' on Huggingface using Mistral AI and Eleven Labs (2025)</a>",
+                    "<a href='https://github.com/dcrey7/wetlands-segmentation' target='_blank'>Datacraft x Egis, Wetlands segmentation using satellite imagery with Unet and Deeplabsv3+ (2025)</a>",
+                    "<a href='https://github.com/dcrey7/MistralAI-Alan-Healthcare' target='_blank'>Finalist, Mistral AI x Alan Healthcare Hackathon, implemented LightRAG architecture for medical knowledge retrieval and reasoning (2024)</a>",
+                    "<a href='https://github.com/dcrey7/NovatrisBCN_finance_hackathon_2024/blob/main/Novatris_24_hackathon.ipynb' target='_blank'>Top 10, Novartis BCN Finance Hackathon, recent and historical drug sales forecasting using K-means and Hierarchical clustering (2024)</a>",
+                    "<a href='https://github.com/dcrey7/janestreet_R' target='_blank'>Jane Street Real-Time Market Data Forecasting, real-time market responders forecasting (2025)</a>",
+                    "<a href='https://dcrey7.github.io/portfolio-3/' target='_blank'>Portfolio Website (2024)</a>"
                 ],
                 fr: [
-                    "Lauréat du prix Art Chitrakala All India Emerging Artist 2021",
-                    "Vainqueur du tournoi de football IGNIS Inter NIT, Agartala. 2016-2017",
-                    "Designer en chef du magazine universitaire. 2016-2019"
+                    "<a href='https://huggingface.co/spaces/Mistral-AI-Game-Jam/team_16trial' target='_blank'>Finaliste, Mistral AI Game Jam, déploiement d'une démo de jeu appelée 'Notme' sur Huggingface en utilisant Mistral AI et Eleven Labs (2025)</a>",
+                    "<a href='https://github.com/dcrey7/wetlands-segmentation' target='_blank'>Datacraft x Egis, segmentation des zones humides à l'aide d'images satellitaires avec Unet et Deeplabsv3+ (2025)</a>",
+                    "<a href='https://github.com/dcrey7/MistralAI-Alan-Healthcare' target='_blank'>Finaliste, Mistral AI x Alan Healthcare Hackathon, mise en œuvre de l'architecture LightRAG pour la récupération et le raisonnement des connaissances médicales (2024)</a>",
+                    "<a href='https://github.com/dcrey7/NovatrisBCN_finance_hackathon_2024/blob/main/Novatris_24_hackathon.ipynb' target='_blank'>Top 10, Novartis BCN Finance Hackathon, prévision des ventes de médicaments récents et historiques en utilisant K-means et le clustering hiérarchique (2024)</a>",
+                    "<a href='https://github.com/dcrey7/janestreet_R' target='_blank'>Jane Street, prévision en temps réel des données de marché, prévision des répondeurs du marché en temps réel (2025)</a>",
+                    "<a href='https://dcrey7.github.io/portfolio-3/' target='_blank'>Site Web Portfolio (2024)</a>"
                 ]
             }
         }
