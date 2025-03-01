@@ -20,8 +20,8 @@ const translations = {
         overview: {
             title: { en: "Overview", fr: "Aperçu" },
             content: { 
-                en: "I am a seasoned data scientist with four years of experience in the field, specializing in various sectors including banking, ecommerce, pharma, and QSR. I have mainly tackled complex challenges within credit risk and market mix domains, delivering impactful solutions. Armed with a diverse toolkit encompassing machine learning, deep learning, predictive modelling, and analytics, I leverage my expertise in Python, AWS, SQL, PyTorch, HIVE, Pyspark, Excel, and Power BI to extract actionable insights from data and guide strategic decision-making processes.",
-                fr: "Je suis un data scientist expérimenté avec quatre ans d'expérience dans le domaine, spécialisé dans divers secteurs tels que la banque, le e-commerce, la pharmacie et la restauration rapide (QSR). J'ai principalement relevé des défis complexes dans les domaines du risque de crédit et du mix marketing, en livrant des solutions impactantes. Doté d'une boîte à outils diversifiée comprenant le machine learning, le deep learning, la modélisation prédictive et l'analyse, j'utilise mon expertise en Python, AWS, SQL, PyTorch, HIVE, Pyspark, Excel, et Power BI pour extraire des insights exploitables à partir des données et guider les processus de prise de décision stratégique."
+                en: "I am a Data Scientist with an engineering degree from NIT Surat, India. Currently, I am pursuing an MSc in Data Science & Artificial Intelligence at emlyon business school, Paris to further upskill myself. My expertise spans model development, optimization, and statistical analysis, with hands-on experience in Python, SQL, and data visualization tools. I am passionate about making data-driven decisions, running experiments, and contributing to frontier AI research.",
+                fr: "Je suis un Data Scientist avec un diplôme d'ingénieur de NIT Surat, en Inde. Actuellement, je poursuis un MSc en Science des Données et Intelligence Artificielle à emlyon business school, Paris pour améliorer davantage mes compétences. Mon expertise couvre le développement de modèles, l'optimisation et l'analyse statistique, avec une expérience pratique en Python, SQL et outils de visualisation de données. Je suis passionné par la prise de décisions basées sur les données, la conduite d'expérimentations et la contribution à la recherche de pointe en IA."
             }
         },
 		
@@ -29,25 +29,25 @@ const translations = {
             title: { en: "Skills", fr: "Compétences" },
             content: { 
                 en: [
-				"Languages: Python, HTML5, CSS ", 
-				"Frameworks & Libraries: Pandas, Numpy, Matplotlib, Scikit-learn, Seaborn, Flask, NLTK",
-				"Environments: Windows",
-				"Machine Learning: Regressions, Xgboost, K-Means, KNN, Bayesian statistics",
-				"Deep Learning: YOLOv4, Detectron",
-				"Database Applications and cloud: SQL, AWS, HIVE",
-				"Software & Tools: Tableau, Power BI",
-				"Microsoft Office Suite: Excel, Word, PowerPoint"
-				],
+                    "ML/AI: Regression & Classification (XGBoost, LightGBM, Catboost), Bayesian Optimization, Neural Networks, A/B Testing, Forecasting",
+                    "Deep Learning: Transformers, Computer Vision (YOLOv4, Detectron), NLP, LLMs, Transformers(CNNs, RNNs, LSTMs, GANs)",
+                    "MLOps & Data Engineering: AWS (SageMaker, S3), Triggers and procedures in TSQL, SQL/NoSQL (MongoDB), Git",
+                    "Programming: Python, R, PySpark, Scikit-Learn, Pandas, NumPy, PyTorch, Tensorflow",
+                    "Visualization & Analysis: Tableau (advanced), SHAP, LIME, Power BI, Seaborn, Plotly, NLTK, spaCy, scikit-learn",
+                    "Additional Skills: JavaScript, Flask, FastAPI, Deeplabsv3+, Streamlit, Langchain, GIS, Sentinel-2, big data",
+                    "Languages: French (A2), English (Fluent), Hindi (Fluent), Malayalam (Fluent)",
+                    "Certifications: DeepLearning.AI Generative AI with LLMs (2024), AWS Cloud Practitioner & AWS ML Speciality (March 2025)"
+                ],
                 fr: [
-				"Langages: Python, HTML5, CSS",
-				"Frameworks et Bibliothèques: Pandas, Numpy, Matplotlib, Scikit-learn, Seaborn, Flask, NLTK",
-				"Environnements: Windows",
-				"Machine Learning: Régressions, Xgboost, K-Means, KNN, Statistiques bayésiennes",
-				"Deep Learning: YOLOv4, Detectron",
-				"Applications de base de données et cloud: SQL, AWS, HIVE",
-				"Logiciels et Outils: Tableau, Power BI",
-				"Suite Microsoft Office: Excel, Word, PowerPoint"
-				]
+                    "ML/IA: Régression & Classification (XGBoost, LightGBM, Catboost), Optimisation Bayésienne, Réseaux de Neurones, Tests A/B, Prévisions",
+                    "Deep Learning: Transformers, Vision par Ordinateur (YOLOv4, Detectron), NLP, LLMs, Transformers(CNNs, RNNs, LSTMs, GANs)",
+                    "MLOps & Ingénierie des Données: AWS (SageMaker, S3), Déclencheurs et procédures en TSQL, SQL/NoSQL (MongoDB), Git",
+                    "Programmation: Python, R, PySpark, Scikit-Learn, Pandas, NumPy, PyTorch, Tensorflow",
+                    "Visualisation & Analyse: Tableau (avancé), SHAP, LIME, Power BI, Seaborn, Plotly, NLTK, spaCy, scikit-learn",
+                    "Compétences Additionnelles: JavaScript, Flask, FastAPI, Deeplabsv3+, Streamlit, Langchain, SIG, Sentinel-2, big data",
+                    "Langues: Français (A2), Anglais (Courant), Hindi (Courant), Malayalam (Courant)",
+                    "Certifications: DeepLearning.AI IA Générative avec LLMs (2024), AWS Cloud Practitioner & AWS ML Speciality (Mars 2025)"
+                ]
             }
         }, 
 		/*skills: {
