@@ -35,8 +35,7 @@ const translations = {
                     "Programming: Python, R, PySpark, Scikit-Learn, Pandas, NumPy, PyTorch, Tensorflow",
                     "Visualization & Analysis: Tableau (advanced), SHAP, LIME, Power BI, Seaborn, Plotly, NLTK, spaCy, scikit-learn",
                     "Additional Skills: JavaScript, Flask, FastAPI, Deeplabsv3+, Streamlit, Langchain, GIS, Sentinel-2, big data",
-                    "Languages: French (A2), English (Fluent), Hindi (Fluent), Malayalam (Fluent)",
-                    "Certifications: DeepLearning.AI Generative AI with LLMs (2024), AWS Cloud Practitioner & AWS ML Speciality (March 2025)"
+                    "Languages: French (A2), English (Fluent), Hindi (Fluent), Malayalam (Fluent)"
                 ],
                 fr: [
                     "ML/IA: Régression & Classification (XGBoost, LightGBM, Catboost), Optimisation Bayésienne, Réseaux de Neurones, Tests A/B, Prévisions",
@@ -45,8 +44,7 @@ const translations = {
                     "Programmation: Python, R, PySpark, Scikit-Learn, Pandas, NumPy, PyTorch, Tensorflow",
                     "Visualisation & Analyse: Tableau (avancé), SHAP, LIME, Power BI, Seaborn, Plotly, NLTK, spaCy, scikit-learn",
                     "Compétences Additionnelles: JavaScript, Flask, FastAPI, Deeplabsv3+, Streamlit, Langchain, SIG, Sentinel-2, big data",
-                    "Langues: Français (A2), Anglais (Courant), Hindi (Courant), Malayalam (Courant)",
-                    "Certifications: DeepLearning.AI IA Générative avec LLMs (2024), AWS Cloud Practitioner & AWS ML Speciality (Mars 2025)"
+                    "Langues: Français (A2), Anglais (Courant), Hindi (Courant), Malayalam (Courant)"
                 ]
             }
         }, 
