@@ -463,3 +463,22 @@ body.light-mode #main-content {
         font-size: 7px; /* Smallest text for mobile */
     }
 }
+
+body:not(.light-mode) .achievement-link {
+    color: white;
+    text-decoration: underline;
+}
+
+body:not(.light-mode) .achievement-link:hover {
+    color: #f0f0f0;
+}
+
+/* Achievement links in light mode - black text */
+body.light-mode .achievement-link {
+    color: black;
+    text-decoration: underline;
+}
+
+body.light-mode .achievement-link:hover {
+    color: #333333;
+}
