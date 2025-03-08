@@ -21,8 +21,7 @@ The website implements a dynamic background animation using JavaScript and CSS:
 - Persistent theme storage using localStorage
 
 ### Multilingual Support
-- Supports multiple languages (English, Spanish, French)
-- Language detection based on browser settings
+- Supports multiple languages (English French)
 - Manual language selection through dropdown menu
 - Smooth content transition during language switch
 - Translation stored in JSON format
