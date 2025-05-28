@@ -71,7 +71,7 @@ body.light-mode {
 .portfolio-container {
     width: 200vw;
     height:200vh;
-    max-width: 2500px;
+    max-width: 2000px;
     
     aspect-ratio: 20/11;
     background-color: var(--container-bg-dark);
