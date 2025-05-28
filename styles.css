@@ -69,9 +69,10 @@ body.light-mode {
 
 /* Main container with 20:11 aspect ratio */
 .portfolio-container {
-    width: 95vw;
+    width: 120vw;
+    height:120vh;
     max-width: 1600px;
-    height:650px;
+    
     aspect-ratio: 20/11;
     background-color: var(--container-bg-dark);
     backdrop-filter: blur(20px);
