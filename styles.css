@@ -4,8 +4,8 @@
 }
 
 :root {
-    --container-bg-dark: rgba(0, 0, 0, 0.8);
-    --container-bg-light: rgba(255, 255, 255, 0.8);
+    --container-bg-dark: rgba(0, 0, 0, 0.5);
+    --container-bg-light: rgba(255, 255, 255, 0.6);
     --text-color-dark: #fff;
     --text-color-light: #000;
     --tile-bg-dark: rgba(255, 255, 255, 0.08);
