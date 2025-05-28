@@ -11,193 +11,139 @@
 <body>
     <div id="webgl-container"></div>
 
-    <div class="portfolio-container">
-        <div class="box left-box">
-            <div class="profile-section">
-                <div id="profile-picture" class="circular-profile"></div>
-                <h1 id="name">Abhishek Thomas</h1>
-                <h2 id="title">Data Scientist</h2>
-            </div>
-
-            <button id="mode-toggle" class="nav-button">
-                <span class="button-icon">☀️</span> Light mode
-            </button>
-
-            <button id="lang-toggle" class="nav-button">
-                <span class="button-icon">🌐</span> Translate to french
-            </button>
-
-            <a href="https://github.com/dcrey7" id="github-btn" class="nav-button" target="_blank">
-                <span class="button-icon">🖥️</span> Github
-            </a>
-
-            <a href="https://www.linkedin.com/in/dcrey7/" id="linkedin-btn" class="nav-button" target="_blank">
-                <span class="button-icon">🔗</span> LinkedIn
-            </a>
-
-            <div class="contact-info">
-                <div class="nav-button">
-                    <span class="button-icon">📧</span>
-                    <span id="email-info" class="info-text">abhishek01789@gmail.com</span>
+    <div class="portfolio-wrapper">
+        <div class="portfolio-container">
+            <!-- Left Side Tiles -->
+            <div class="left-section">
+                <div class="tile tile-profile" id="profile-tile">
+                    <div id="profile-picture" class="profile-image"></div>
                 </div>
-                <div class="nav-button">
-                    <span class="button-icon">📞</span>
-                    <span id="phone-info" class="info-text">+91 7202849884, +33 07 68 97 56 61</span>
+
+                <div class="tile tile-resume" id="resume-tile">
+                    <a href="https://drive.google.com/file/d/1UqLTrh6UqBlu_Qzqb9YIdN4fylM0k5pN/view?usp=sharing" target="_blank">
+                        <span class="tile-icon">📃</span>
+                        <span class=" tile-name"><h2 id="resume"> </h2>See resume</h2> </span>
+                    </a>
                 </div>
-            </div>
 
-            <a href="https://drive.google.com/file/d/1UqLTrh6UqBlu_Qzqb9YIdN4fylM0k5pN/view?usp=sharing" id="resume-btn" class="nav-button download-btn" target="_blank">
-                <span class="button-icon">📃</span> See resume
-            </a>
-        </div>
+                <div class="tile tile-name" id="name-tile">
+                    <h1 id="name">Abhishek Thomas</h1>
+                    <h2 id="title">Data Scientist</h2>
+                </div>
 
-        <div class="box right-box">
-            <!-- Tile View -->
-            <div id="tile-view" class="view-container active">
-                <div class="tiles-grid">
-                    <!-- Medium tile - Overview (3×2 = 6 spaces) -->
-                    <div class="tile" data-section="overview" data-size="medium">
-                        <div class="tile-content">
-                            <div class="tile-emoji">👨‍💻</div>
-                            <h3 class="tile-title">Overview</h3>
-                            <p class="tile-subtitle">About Me</p>
-                        </div>
-                    </div>
+                <div class="tile tile-mode" id="mode-toggle">
+                    <span class="tile-icon">☀️</span>
+                    <span class="tile-text">Light mode</span>
+                </div>
 
-                    <!-- Medium tile - Experience (3×2 = 6 spaces) -->
-                    <div class="tile" data-section="experience" data-size="medium">
-                        <div class="tile-content">
-                            <div class="tile-emoji">💼</div>
-                            <h3 class="tile-title">Experience</h3>
-                            <p class="tile-subtitle">Professional Journey</p>
-                        </div>
-                    </div>
+                <div class="tile tile-lang" id="lang-toggle">
+                    <span class="tile-icon">🌐</span>
+                    <span class="tile-text">Translate to french</span>
+                </div>
 
-                    <!-- Remaining small tiles (2×2 each = 16 total spaces) -->
-                    <div class="tile" data-section="skills" data-size="small">
-                        <div class="tile-content">
-                            <div class="tile-emoji">🛠️</div>
-                            <h3 class="tile-title">Skills</h3>
-                            <p class="tile-subtitle">Technical Expertise</p>
-                        </div>
-                    </div>
+                <div class="tile tile-contact tile-github">
+                    <a href="https://github.com/dcrey7" target="_blank">
+                        <span class="tile-icon">🖥️</span>
+                        <span class="tile-text">Github</span>
+                    </a>
+                </div>
 
-                    <div class="tile" data-section="education" data-size="small">
-                        <div class="tile-content">
-                            <div class="tile-emoji">🎓</div>
-                            <h3 class="tile-title">Education</h3>
-                            <p class="tile-subtitle">Academic Background</p>
-                        </div>
-                    </div>
+                <div class="tile tile-contact tile-email" id="email-tile">
+                    <span class="tile-icon">📧</span>
+                    <span class="tile-text" id="email-info">abhishek01789@gmail.com</span>
+                </div>
 
-                    <div class="tile" data-section="certification" data-size="small">
-                        <div class="tile-content">
-                            <div class="tile-emoji">📜</div>
-                            <h3 class="tile-title">Certifications</h3>
-                            <p class="tile-subtitle">Professional Development</p>
-                        </div>
-                    </div>
+                <div class="tile tile-contact tile-phone" id="phone-tile">
+                    <span class="tile-icon">📞</span>
+                    <span class="tile-text" id="phone-info">+91 7202849884, +33 07 68 97 56 61</span>
+                </div>
 
-                    <div class="tile" data-section="extras" data-size="small">
-                        <div class="tile-content">
-                            <div class="tile-emoji">🏆</div>
-                            <h3 class="tile-title">Achievements</h3>
-                            <p class="tile-subtitle">Key Projects & Awards</p>
-                        </div>
-                    </div>
+                <div class="tile tile-contact tile-linkedin">
+                    <a href="https://www.linkedin.com/in/dcrey7/" target="_blank">
+                        <span class="tile-icon">🔗</span>
+                        <span class="tile-text">LinkedIn</span>
+                    </a>
                 </div>
             </div>
 
-            <!-- Content View -->
-            <div id="content-view" class="view-container">
-                <button id="back-button" class="back-btn">
-                    <span class="back-icon">←</span> Back
-                </button>
+            <!-- Divider Line -->
+            <div class="section-divider"></div>
 
-                <div id="content-area">
-                    <!-- Overview Content -->
-                    <div id="overview-content" class="section-content">
-                        <h3>Overview</h3>
-                        <p>I am a Data Scientist with an engineering degree from NIT Surat, India. Currently, I am pursuing an MSc in Data Science & Artificial Intelligence at emlyon business school, Paris to further upskill myself. My expertise spans model development, optimization, and statistical analysis, with hands-on experience in Python, SQL, and data visualization tools. I am passionate about making data-driven decisions, running experiments, and contributing to frontier AI research.</p>
+            <!-- Right Side Content -->
+            <div class="right-section">
+                <!-- Tile Grid View -->
+                <div id="tile-grid" class="tile-grid-right active">
+                    <div class="tile tile-overview" data-section="overview">
+                        <div class="tile-icon">👋</div>
+                        <h3 class="tile-title">Overview</h3>
+                        <p class="tile-subtitle">About me</p>
                     </div>
 
-                    <!-- Experience Content -->
-                    <div id="experience-content" class="section-content">
-                        <h3>Experience</h3>
-                        <div>
-                            <h4>Consultant - EXL Services (Sep 2022-Jul 2024)</h4>
-                            <ul>
-                                <li>Built probability models for a leading US collections agency, improving the GINI coefficient by 6% through the use of LightGBM and Bayesian optimization.</li>
-                                <li>Conducted A/B testing for a dining rewards campaign, contributing to the segmentation of test, control, and holdout groups while actively monitoring key KPIs such as conversion rates, engagement metrics, and customer retention.</li>
-                                <li>Built probability of default models using XGBoost for customer and business for a major business lending firm, improved GINI score by ~2% with the help of Bayesian optimization</li>
-                            </ul>
-                            <hr class="experience-divider">
-                            <h4>Data Analyst - TheMathCompany (Sep 2021-Aug 2022)</h4>
-                            <ul>
-                                <li>Provided solutions to optimize spends on different channels in marketing, simulation with optimized budget improved sales by ~3%</li>
-                                <li>Created multiple regional and national level market mix models for several medicative products for Indian markets using Bayesian regression</li>
-                            </ul>
-                            <hr class="experience-divider">
-                            <h4>Transaction Risk Analyst - Amazon (Nov 2019-Sep 2021)</h4>
-                            <ul>
-                                <li>Identified, analyzed and eliminated the risk/fraud, which arises due to the use of debit cards/credit cards/e-checks/store cards/gift certificates on Amazon platforms</li>
-                                <li>Created visually impactful dashboards in Excel and Tableau for data reporting by using pivot tables and VLOOKUP</li>
-                            </ul>
+                    <div class="tile tile-experience" data-section="experience">
+                        <div class="tile-icon">💼</div>
+                        <h3 class="tile-title">Experience</h3>
+                        <p class="tile-subtitle">Professional journey</p>
+                    </div>
+
+                    <div class="tile tile-education" data-section="education">
+                        <div class="tile-icon">🎓</div>
+                        <h3 class="tile-title">Education</h3>
+                        <p class="tile-subtitle">Academic background</p>
+                    </div>
+
+                    <div class="tile tile-projects" data-section="extras">
+                        <div class="tile-icon">🏆</div>
+                        <h3 class="tile-title">Projects</h3>
+                        <p class="tile-subtitle">Hackathons & achievements</p>
+                    </div>
+
+                    <div class="tile tile-skills-small" data-section="skills">
+                        <div class="tile-icon">🚀</div>
+                        <h3 class="tile-title">Skills</h3>
+                    </div>
+
+                    <div class="tile tile-certs-small" data-section="certification">
+                        <div class="tile-icon">📜</div>
+                        <h3 class="tile-title">Certificates</h3>
+                    </div>
+                </div>
+
+                <!-- Content View -->
+                <div id="content-view" class="content-view">
+                    <button id="back-button" class="back-button">
+                        <span class="back-icon">←</span> Back
+                    </button>
+                    
+                    <div id="content-container" class="content-container">
+                        <div id="overview" class="section">
+                            <h3>Overview</h3>
+                            <p></p>
                         </div>
-                    </div>
 
-                    <!-- Skills Content -->
-                    <div id="skills-content" class="section-content">
-                        <h3>Skills</h3>
-                        <ul>
-                            <li>ML/AI: Regression & Classification (XGBoost, LightGBM, Catboost), Bayesian Optimization, Neural Networks, A/B Testing, Forecasting</li>
-                            <li>Deep Learning: Transformers, Computer Vision (YOLOv4, Detectron), NLP, LLMs, CNNs, RNNs, LSTMs, GANs</li>
-                            <li>MLOps & Data Engineering: AWS (SageMaker, S3), SQL/NoSQL (MongoDB), Git</li>
-                            <li>Programming: Python, R, PySpark, Scikit-Learn, Pandas, NumPy, PyTorch, Tensorflow</li>
-                            <li>Visualization: Tableau, SHAP, LIME, Power BI, Seaborn, Plotly</li>
-                            <li>Languages: French (A2), English (Fluent), Hindi (Fluent), Malayalam (Fluent)</li>
-                        </ul>
-                    </div>
-
-                    <!-- Education Content -->
-                    <div id="education-content" class="section-content">
-                        <h3>Education</h3>
-                        <div>
-                            <h4>MSc. - Emlyon Business School, Data Science & AI Strategy (2024-2026)</h4>
-                            <ul>
-                                <li>Masters of science in Data Science & Artificial Intelligence Strategy</li>
-                            </ul>
-                            <h4>B.Tech - NIT Surat, Mechanical Engineering (2015-2019)</h4>
-                            <ul>
-                                <li>Bachelors of Technology in Mechanical Engineering</li>
-                                <li>Electives - Robotics, Marketing, Cleaner technologies, Entrepreneurship</li>
-                            </ul>
+                        <div id="skills" class="section">
+                            <h3>Skills</h3>
+                            <ul></ul>
                         </div>
-                    </div>
 
-                    <!-- Certifications Content -->
-                    <div id="certification-content" class="section-content">
-                        <h3>Certifications</h3>
-                        <ul>
-                            <li>AWS Certified Cloud Practitioner Certification by March 2025</li>
-                            <li>AWS Certified Machine Learning - Specialty by March 2025</li>
-                            <li>Gen AI with LLM 2024, deeplearning.ai</li>
-                            <li>Deep generative models 2023, Indian Institute of Science, Bangalore</li>
-                            <li>Big data engineer certification 2021-2022, Udemy</li>
-                            <li>Post Graduate Diploma in Data Science, Machine and Deep Learning 2019-2020, Udemy</li>
-                        </ul>
-                    </div>
+                        <div id="education" class="section">
+                            <h3>Education</h3>
+                            <div></div>
+                        </div>
 
-                    <!-- Achievements Content -->
-                    <div id="extras-content" class="section-content">
-                        <h3>Achievements</h3>
-                        <ul>
-                            <li><a href='https://huggingface.co/spaces/Mistral-AI-Game-Jam/team_16trial' target='_blank' class='achievement-link'>Finalist, Mistral AI Game Jam, deployed a game demo called 'Notme' (2025)</a></li>
-                            <li><a href='#' target='_blank' class='achievement-link'>Datacraft x Egis, Wetlands segmentation using satellite imagery (2025)</a></li>
-                            <li><a href='https://github.com/dcrey7/mistral_alan_hackathon' target='_blank' class='achievement-link'>Finalist, Mistral AI x Alan Healthcare Hackathon (2024)</a></li>
-                            <li><a href='https://github.com/dcrey7/NovatrisBCN_finance_hackathon_2024/blob/main/Novatris_24_hackathon.ipynb' target='_blank' class='achievement-link'>Top 10, Novartis BCN Finance Hackathon (2024)</a></li>
-                            <li><a href='https://github.com/dcrey7/janestreet_R' target='_blank' class='achievement-link'>Jane Street Real-Time Market Data Forecasting (2025)</a></li>
-                        </ul>
+                        <div id="experience" class="section">
+                            <h3>Experience</h3>
+                            <div></div>
+                        </div>
+
+                        <div id="certification" class="section">
+                            <h3>Certifications</h3>
+                            <ul></ul>
+                        </div>
+
+                        <div id="extras" class="section">
+                            <h3>Key Achievements</h3>
+                            <ul></ul>
+                        </div>
                     </div>
                 </div>
             </div>
