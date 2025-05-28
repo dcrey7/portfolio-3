@@ -11,85 +11,140 @@
 <body>
     <div id="webgl-container"></div>
 
-    <div class="portfolio-container">
-        <div class="box left-box">
-            <div class="profile-section">
-                <div id="profile-picture" class="circular-profile"></div>
-                <h1 id="name">Abhishek Thomas</h1>
-                <h2 id="title">Data Scientist</h2>
+    <div class="portfolio-wrapper">
+        <div class="portfolio-container">
+            <!-- Left Side Tiles -->
+            <div class="left-section">
+                <div class="tile tile-profile" id="profile-tile">
+                    <div id="profile-picture" class="profile-image"></div>
+                </div>
+
+                <div class="tile tile-resume" id="resume-tile">
+                    <a href="https://drive.google.com/file/d/1UqLTrh6UqBlu_Qzqb9YIdN4fylM0k5pN/view?usp=sharing" target="_blank">
+                        <span class="tile-icon">📃</span>
+                        <span class="tile-text">See resume</span>
+                    </a>
+                </div>
+
+                <div class="tile tile-name" id="name-tile">
+                    <h1 id="name">Abhishek Thomas</h1>
+                    <h2 id="title">Data Scientist</h2>
+                </div>
+
+                <div class="tile tile-mode" id="mode-toggle">
+                    <span class="tile-icon">☀️</span>
+                    <span class="tile-text">Light mode</span>
+                </div>
+
+                <div class="tile tile-lang" id="lang-toggle">
+                    <span class="tile-icon">🌐</span>
+                    <span class="tile-text">Translate to french</span>
+                </div>
+
+                <div class="tile tile-contact tile-github">
+                    <a href="https://github.com/dcrey7" target="_blank">
+                        <span class="tile-icon">🖥️</span>
+                        <span class="tile-text">Github</span>
+                    </a>
+                </div>
+
+                <div class="tile tile-contact tile-email" id="email-tile">
+                    <span class="tile-icon">📧</span>
+                    <span class="tile-text" id="email-info">abhishek01789@gmail.com</span>
+                </div>
+
+                <div class="tile tile-contact tile-phone" id="phone-tile">
+                    <span class="tile-icon">📞</span>
+                    <span class="tile-text" id="phone-info">+91 7202849884, +33 07 68 97 56 61</span>
+                </div>
+
+                <div class="tile tile-contact tile-linkedin">
+                    <a href="https://www.linkedin.com/in/dcrey7/" target="_blank">
+                        <span class="tile-icon">🔗</span>
+                        <span class="tile-text">LinkedIn</span>
+                    </a>
+                </div>
             </div>
 
-            <button id="mode-toggle" class="nav-button">
-                <span class="button-icon">☀️</span> Light mode
-            </button>
+            <!-- Divider Line -->
+            <div class="section-divider"></div>
 
-            <button id="lang-toggle" class="nav-button">
-                <span class="button-icon">🌐</span> Translate to french
-            </button>
+            <!-- Right Side Content -->
+            <div class="right-section">
+                <!-- Tile Grid View -->
+                <div id="tile-grid" class="tile-grid-right active">
+                    <div class="tile tile-overview" data-section="overview">
+                        <div class="tile-icon">👋</div>
+                        <h3 class="tile-title">Overview</h3>
+                        <p class="tile-subtitle">About me</p>
+                    </div>
 
-            <a href="https://github.com/dcrey7" id="github-btn" class="nav-button" target="_blank">
-                <span class="button-icon">🖥️</span> Github
-            </a>
+                    <div class="tile tile-experience" data-section="experience">
+                        <div class="tile-icon">💼</div>
+                        <h3 class="tile-title">Experience</h3>
+                        <p class="tile-subtitle">Professional journey</p>
+                    </div>
 
-            <a href="https://www.linkedin.com/in/dcrey7/" id="linkedin-btn" class="nav-button" target="_blank">
-                <span class="button-icon">🔗</span> LinkedIn
-            </a>
+                    <div class="tile tile-education" data-section="education">
+                        <div class="tile-icon">🎓</div>
+                        <h3 class="tile-title">Education</h3>
+                        <p class="tile-subtitle">Academic background</p>
+                    </div>
 
-            <div class="contact-info">
-                <div class="nav-button">
-                    <span class="button-icon">📧</span>
-                    <span id="email-info" class="info-text">abhishek01789@gmail.com</span>
-                </div>
-                <div class="nav-button">
-                    <span class="button-icon">📞</span>
-                    <span id="phone-info" class="info-text">+91 7202849884, +33 07 68 97 56 61</span>
-                </div>
-            </div>
+                    <div class="tile tile-projects" data-section="extras">
+                        <div class="tile-icon">🏆</div>
+                        <h3 class="tile-title">Projects</h3>
+                        <p class="tile-subtitle">Hackathons & achievements</p>
+                    </div>
 
-            <a href="https://drive.google.com/file/d/1UqLTrh6UqBlu_Qzqb9YIdN4fylM0k5pN/view?usp=sharing" id="resume-btn" class="nav-button download-btn" target="_blank">
-                <span class="button-icon">📃</span> See resume
-            </a>
-        </div>
+                    <div class="tile tile-skills-small" data-section="skills">
+                        <div class="tile-icon">🚀</div>
+                        <h3 class="tile-title">Skills</h3>
+                    </div>
 
-        <div class="box right-box">
-            <nav id="main-nav">
-                <a href="#" class="nav-link active" data-target="overview">Overview</a>
-                <a href="#" class="nav-link" data-target="skills">Skills</a>
-                <a href="#" class="nav-link" data-target="education">Education</a>
-                <a href="#" class="nav-link" data-target="experience">Experience</a>
-                <a href="#" class="nav-link" data-target="certification">Certification</a>
-                <a href="#" class="nav-link" data-target="extras">Extras</a>
-            </nav>
-
-            <div id="main-content">
-                <div id="overview" class="section active">
-                    <h3>Overview</h3>
-                    <p></p>
+                    <div class="tile tile-certs-small" data-section="certification">
+                        <div class="tile-icon">📜</div>
+                        <h3 class="tile-title">Certificates</h3>
+                    </div>
                 </div>
 
-                <div id="skills" class="section">
-                    <h3>Skills</h3>
-                    <ul></ul>
-                </div>
+                <!-- Content View -->
+                <div id="content-view" class="content-view">
+                    <button id="back-button" class="back-button">
+                        <span class="back-icon">←</span> Back
+                    </button>
+                    
+                    <div id="content-container" class="content-container">
+                        <div id="overview" class="section">
+                            <h3>Overview</h3>
+                            <p></p>
+                        </div>
 
-                <div id="education" class="section">
-                    <h3>Education</h3>
-                    <div></div>
-                </div>
+                        <div id="skills" class="section">
+                            <h3>Skills</h3>
+                            <ul></ul>
+                        </div>
 
-                <div id="experience" class="section">
-                    <h3>Experience</h3>
-                    <div></div>
-                </div>
+                        <div id="education" class="section">
+                            <h3>Education</h3>
+                            <div></div>
+                        </div>
 
-                <div id="certification" class="section">
-                    <h3>Certifications</h3>
-                    <ul></ul>
-                </div>
+                        <div id="experience" class="section">
+                            <h3>Experience</h3>
+                            <div></div>
+                        </div>
 
-                <div id="extras" class="section">
-                    <h3>Extracurricular</h3>
-                    <ul></ul>
+                        <div id="certification" class="section">
+                            <h3>Certifications</h3>
+                            <ul></ul>
+                        </div>
+
+                        <div id="extras" class="section">
+                            <h3>Key Achievements</h3>
+                            <ul></ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

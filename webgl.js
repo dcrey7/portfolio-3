@@ -136,7 +136,7 @@ function changeColors() {
 }
 
 function changeColorsOnClick(event) {
-    if (event.target.tagName.toLowerCase() !== 'a' && event.target.tagName.toLowerCase() !== 'button') {
+    if (!event.target.closest('.tile, .nav-button, .back-btn, a, button')) {
         event.preventDefault();
         changeColors();
     }
