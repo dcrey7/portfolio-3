@@ -1,6 +1,6 @@
 @viewport {
   width: device-width;
-  zoom: 1.5;
+  zoom: 1.2;
 }
 
 :root {
@@ -71,7 +71,7 @@ body.light-mode {
 .portfolio-container {
     width: 95vw;
     height:95vh;
-    max-width: 2000px;
+    max-width: 1600px;
     
     aspect-ratio: 20/11;
     background-color: var(--container-bg-dark);
