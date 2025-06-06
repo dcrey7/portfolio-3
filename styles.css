@@ -1,6 +1,6 @@
 @viewport {
   width: device-width;
-  zoom: 1.0;
+  zoom: 1.2;
 }
 
 :root {
@@ -69,9 +69,10 @@ body.light-mode {
 
 /* Main container with 20:11 aspect ratio */
 .portfolio-container {
-    width: 95vw;
+    width: 90vw;
+    height:90vh;
     max-width: 1600px;
-    height:650px;
+    
     aspect-ratio: 20/11;
     background-color: var(--container-bg-dark);
     backdrop-filter: blur(20px);
@@ -119,17 +120,13 @@ body.light-mode .section-divider {
     overflow: hidden;
 }
 
-/* Base tile styles */
+/* Base tile styles - ULTRA SMOOTH HOVER EFFECT */
 .tile {
     background: var(--tile-bg-dark);
     backdrop-filter: blur(10px);
     border: 1px solid var(--tile-border-dark);
     border-radius: 16px;
     cursor: pointer;
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
-                box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
-                background-color 0.3s ease,
-                z-index 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -137,69 +134,35 @@ body.light-mode .section-divider {
     text-align: center;
     overflow: hidden;
     position: relative;
+    
+    /* Ultra smooth transform and transition */
     transform: scale(1);
     transform-origin: center;
-    will-change: transform;
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    
+    /* Base shadow for depth */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    
+    /* Performance optimizations */
+    will-change: transform, background-color;
     backface-visibility: hidden;
 }
 
 body.light-mode .tile {
     background: var(--tile-bg-light);
     border-color: var(--tile-border-light);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* PlayStation-style hover effect */
+/* Ultra smooth scale-down hover effect */
 .tile:hover {
-    transform: scale(0.95) translateZ(0);
-    z-index: 100;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: scale(0.96) !important;
     background: var(--tile-hover-dark);
 }
 
 body.light-mode .tile:hover {
     background: var(--tile-hover-light);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
-
-
-/* Left section tile positioning 
-.tile-profile {
-    grid-column: 1 / 4; /* Increased from 1/3 to 1/4 
-    grid-row: 1 / 5;
-}
-
-.tile-resume {
-    grid-column: 4 / 7; /* Adjusted from 3/5 to 4/7 
-    grid-row: 1 / 3;
-    background-color: var(--resume-button-color) !important;
-}
-
-.tile-resume a {
-    color: white;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-
-.tile-name {
-    grid-column: 1 / 7; /* Increased from 1/6 to 1/7 
-    grid-row: 3 / 5;
-}
-
-.tile-mode {
-    grid-column: 1 / 4; /* Increased from 1/3 to 1/4 
-    grid-row: 5 / 7;
-}
-
-.tile-lang {
-    grid-column: 4 / 7; /* Adjusted from 3/5 to 4/7 
-    grid-row: 5 / 7;
-}
-    */
 
 /* Left section tile positioning - filling all 11 rows */
 .tile-profile {
@@ -413,11 +376,14 @@ body.light-mode .tile:hover {
     margin: 15px;
     cursor: pointer;
     font-size: 16px;
-    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     gap: 8px;
     width: fit-content;
+    
+    /* Ultra smooth effect for back button */
+    transform: scale(1);
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 body.light-mode .back-button {
@@ -427,7 +393,7 @@ body.light-mode .back-button {
 
 .back-button:hover {
     background: var(--tile-hover-dark);
-    transform: translateX(-5px);
+    transform: scale(0.96) translateX(-5px);
 }
 
 body.light-mode .back-button:hover {
