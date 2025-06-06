@@ -268,7 +268,7 @@ body.light-mode .tile:hover {
 }
 
 .tile-contact .tile-text {
-    font-size: 1em;
+    font-size: 0.85em;
 }
 
 .tile-contact a {
