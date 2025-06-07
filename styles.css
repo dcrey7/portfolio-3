@@ -120,7 +120,7 @@ body.light-mode .section-divider {
     overflow: hidden;
 }
 
-/* Base tile styles - ULTRA SMOOTH HOVER EFFECT */
+/* Base tile styles - HOVER AND CLICK EFFECTS */
 .tile {
     background: var(--tile-bg-dark);
     backdrop-filter: blur(10px);
@@ -135,10 +135,10 @@ body.light-mode .section-divider {
     overflow: hidden;
     position: relative;
     
-    /* Ultra smooth transform and transition */
+    /* Smooth transform and transition properties */
     transform: scale(1);
     transform-origin: center;
-    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     
     /* Base shadow for depth */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -154,13 +154,23 @@ body.light-mode .tile {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Ultra smooth scale-down hover effect */
+/* Hover effect - only background color change */
 .tile:hover {
-    transform: scale(0.96) !important;
     background: var(--tile-hover-dark);
 }
 
 body.light-mode .tile:hover {
+    background: var(--tile-hover-light);
+}
+
+/* Click/Active effect - scaling animation */
+.tile:active {
+    transform: scale(0.95) !important;
+    background: var(--tile-hover-dark);
+    transition: all 0.95s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+body.light-mode .tile:active {
     background: var(--tile-hover-light);
 }
 
@@ -381,9 +391,9 @@ body.light-mode .tile:hover {
     gap: 8px;
     width: fit-content;
     
-    /* Ultra smooth effect for back button */
+    /* Smooth effect for back button */
     transform: scale(1);
-    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 body.light-mode .back-button {
@@ -391,12 +401,23 @@ body.light-mode .back-button {
     border-color: var(--tile-border-light);
 }
 
+/* Back button hover - only background change */
 .back-button:hover {
     background: var(--tile-hover-dark);
-    transform: scale(0.96) translateX(-5px);
 }
 
 body.light-mode .back-button:hover {
+    background: var(--tile-hover-light);
+}
+
+/* Back button click - scaling animation */
+.back-button:active {
+    transform: scale(0.95) translateX(-5px);
+    background: var(--tile-hover-dark);
+    transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+body.light-mode .back-button:active {
     background: var(--tile-hover-light);
 }
 
