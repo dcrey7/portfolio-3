@@ -254,6 +254,50 @@ const translations = {
 let currentView = 'tiles';
 let currentSection = null;
 
+// Glass effect parameters (can be adjusted)
+const glassParams = {
+    refraction: 1.0,    // How much the glass bends light (0.5-2.0)
+    aberration: 1.0,    // Chromatic aberration strength (0.0-2.0)
+    thickness: 1.0,     // Glass thickness (0.5-2.0)
+    clarity: 0.95       // Glass clarity (0.8-1.0, higher = clearer)
+};
+
+// Predefined glass presets
+const glassPresets = {
+    apple: {
+        refraction: 1.2,
+        aberration: 1.2,
+        thickness: 1.1,
+        clarity: 0.92
+    },
+    crystal: {
+        refraction: 0.6,
+        aberration: 0.5,
+        thickness: 0.8,
+        clarity: 0.98
+    },
+    frosted: {
+        refraction: 1.5,
+        aberration: 1.3,
+        thickness: 1.4,
+        clarity: 0.85
+    },
+    subtle: {
+        refraction: 0.8,
+        aberration: 0.8,
+        thickness: 0.9,
+        clarity: 0.96
+    }
+};
+
+// Function to apply glass preset
+function applyGlassPreset(presetName) {
+    const preset = glassPresets[presetName];
+    if (preset && typeof updateGlassParams === 'function') {
+        updateGlassParams(preset);
+    }
+}
+
 function updateContent() {
     const lang = isEnglish ? 'en' : 'fr';
 
@@ -399,6 +443,15 @@ function toggleMode() {
     if (typeof updateBackgroundMode === 'function') {
         updateBackgroundMode(isLightMode);
     }
+    
+    // Adjust glass parameters for light mode
+    if (isLightMode) {
+        // Use subtle preset for light mode
+        applyGlassPreset('subtle');
+    } else {
+        // Use apple preset for dark mode
+        applyGlassPreset('apple');
+    }
 }
 
 function copyToClipboard(text, element) {
@@ -428,6 +481,26 @@ function copyToClipboard(text, element) {
         }, 1500);
     });
 }
+
+// Debounce function for resize events
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Update container bounds on resize
+const debouncedUpdateBounds = debounce(() => {
+    if (typeof updateContainerBounds === 'function') {
+        updateContainerBounds();
+    }
+}, 250);
 
 document.addEventListener('DOMContentLoaded', function() {
     updateContent();
@@ -481,6 +554,20 @@ document.addEventListener('DOMContentLoaded', function() {
         tile.style.animationDelay = `${index * 0.05}s`;
         tile.style.animation = 'fadeInScale 0.5s ease forwards';
     });
+    
+    // Update glass effect bounds on window resize
+    window.addEventListener('resize', debouncedUpdateBounds);
+    
+    // Initialize glass parameters with Apple-like preset
+    if (typeof updateGlassParams === 'function') {
+        applyGlassPreset('apple');
+    }
+    
+    // You can change the glass effect by calling:
+    // applyGlassPreset('crystal');   // Clear, minimal distortion
+    // applyGlassPreset('frosted');   // Thick, more distortion
+    // applyGlassPreset('subtle');    // Very subtle effect
+    // applyGlassPreset('apple');     // Apple-like glass (default)
 });
 
 // Add CSS animation for tile entrance
@@ -498,3 +585,6 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Export functions for external use
+window.applyGlassPreset = applyGlassPreset;
