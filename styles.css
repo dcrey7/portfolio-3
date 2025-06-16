@@ -56,6 +56,13 @@ body.light-mode {
     z-index: -1;
 }
 
+/* Glass layer positioning */
+#glass-layer {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1;
+}
+
 /* Main wrapper to center the container */
 .portfolio-wrapper {
     display: flex;
@@ -63,40 +70,54 @@ body.light-mode {
     align-items: center;
     height: 100vh;
     width: 100%;
-    padding: 10px 10px 10px 10px; /* Less padding top/bottom, more left/right */
+    padding: 10px 10px 10px 10px;
     box-sizing: border-box;
+    position: relative;
+    z-index: 2;
 }
 
 /* Main container with 20:11 aspect ratio */
 .portfolio-container {
     width: 90vw;
-    height:90vh;
+    height: 90vh;
     max-width: 1600px;
-    
     aspect-ratio: 20/11;
-    background-color: var(--container-bg-dark);
-    backdrop-filter: blur(20px);
+    /* UPDATED: Reduced opacity and blur for glass effect */
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
     border-radius: 24px;
     display: flex;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    /* ENHANCED: Better shadows for glass depth */
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.4),
+        0 2px 10px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
     position: relative;
-    margin: auto; /* Center the container */
+    margin: auto;
 }
 
 body.light-mode .portfolio-container {
-    background-color: var(--container-bg-light);
+    /* UPDATED: Adjusted for light mode glass */
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(6px);
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.15),
+        0 2px 10px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.08);
 }
 
 /* Left section - 7/20 of container width */
 .left-section {
-    width: 35%; /* 7/20 = 35% */
+    width: 35%;
     height: 100%;
     padding: 12px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(11, 1fr);
-    gap: 8px; /* Reduced gap from 10px to 8px */
+    gap: 8px;
     box-sizing: border-box;
 }
 
@@ -114,7 +135,7 @@ body.light-mode .section-divider {
 
 /* Right section - 13/20 of container width */
 .right-section {
-    width: 65%; /* 13/20 = 65% */
+    width: 65%;
     height: 100%;
     position: relative;
     overflow: hidden;
@@ -134,56 +155,75 @@ body.light-mode .section-divider {
     text-align: center;
     overflow: hidden;
     position: relative;
-    
-    /* Smooth transform and transition properties */
     transform: scale(1);
     transform-origin: center;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    
-    /* Base shadow for depth */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    
-    /* Performance optimizations */
-    will-change: transform, background-color;
+    /* FIXED: Smoother, faster transitions */
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.2),
+        0 1px 4px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    /* Performance optimization */
+    will-change: transform, box-shadow;
     backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body.light-mode .tile {
     background: var(--tile-bg-light);
     border-color: var(--tile-border-light);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.1),
+        0 1px 4px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
-/* Hover effect - only background color change */
+/* Hover effect - background color change with enhanced shadow */
 .tile:hover {
     background: var(--tile-hover-dark);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.25),
+        0 3px 8px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
+
 
 body.light-mode .tile:hover {
     background: var(--tile-hover-light);
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.15),
+        0 3px 8px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 /* Click/Active effect - scaling animation */
 .tile:active {
-    transform: scale(0.95) !important;
-    background: var(--tile-hover-dark);
-    transition: all 0.95s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: scale(0.97);
+    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.2),
+        0 1px 3px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 body.light-mode .tile:active {
-    background: var(--tile-hover-light);
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 /* Left section tile positioning - filling all 11 rows */
 .tile-profile {
-    display: block;          /* overrides the .tile flex rule   */
-    overflow: hidden;        /* clip anything that sticks out   */
+    display: block;
+    overflow: hidden;
     grid-column: 1 / 5;
     grid-row: 1 / 5;
 }
 
 .tile-resume {
-    grid-column: 5 / 8; /* Full remaining width */
+    grid-column: 5 / 8;
     grid-row: 1 / 5;
     background-color: var(--resume-button-color) !important;
 }
@@ -200,8 +240,8 @@ body.light-mode .tile:active {
 }
 
 .tile-name {
-    grid-column: 1 / 8; /* Full width */
-    grid-row: 5 / 7; /* Increased height */
+    grid-column: 1 / 8;
+    grid-row: 5 / 7;
 }
 
 .tile-mode {
@@ -210,7 +250,7 @@ body.light-mode .tile:active {
 }
 
 .tile-lang {
-    grid-column: 4 / 8; /* Full remaining width */
+    grid-column: 4 / 8;
     grid-row: 7 / 9;
 }
 
@@ -229,13 +269,13 @@ body.light-mode .tile:active {
 }
 
 .tile-phone {
-    grid-column: 4 /6 ; /* Fill to edge */
+    grid-column: 4 /6 ;
     grid-row: 9 / 12;
 }
 
 .tile-linkedin {
-    grid-column: 7 / 8; /* Wider tile */
-    grid-row: 9/ 12; /* Bottom row */
+    grid-column: 7 / 8;
+    grid-row: 9/ 12;
 }
 
 /* Profile image styles */
@@ -297,8 +337,8 @@ body.light-mode .tile:active {
     display: grid;
     grid-template-columns: repeat(13, 1fr);
     grid-template-rows: repeat(11, 1fr);
-    gap: 8px; /* Reduced gap from 12px to 8px */
-    padding: 12px; /* Reduced padding from 15px to 12px */
+    gap: 8px;
+    padding: 12px;
     height: 100%;
     box-sizing: border-box;
     opacity: 0;
@@ -313,33 +353,33 @@ body.light-mode .tile:active {
 
 /* Right section tile positioning */
 .tile-overview {
-    grid-column: 1 / 6; /* Increased from 1/5 to 1/6 */
-    grid-row: 1 / 6; /* Increased from 1/5 to 1/6 */
+    grid-column: 1 / 6;
+    grid-row: 1 / 6;
 }
 
 .tile-experience {
-    grid-column: 6 / 14; /* Adjusted from 5/12 to 6/14 to fill space */
-    grid-row: 1 / 6; /* Increased from 1/5 to 1/6 */
+    grid-column: 6 / 14;
+    grid-row: 1 / 6;
 }
 
 .tile-education {
-    grid-column: 1 / 8; /* Increased from 1/7 to 1/8 */
-    grid-row: 6 / 9; /* Increased height from 5/7 to 6/9 */
+    grid-column: 1 / 8;
+    grid-row: 6 / 9;
 }
 
 .tile-projects {
-    grid-column: 8 / 14; /* Adjusted from 7/12 to 8/14 */
-    grid-row: 6 / 12; /* Increased from 5/9 to 6/12 to fill bottom */
+    grid-column: 8 / 14;
+    grid-row: 6 / 12;
 }
 
 .tile-skills-small {
-    grid-column: 1 / 4; /* Increased from 1/3 to 1/4 */
-    grid-row: 9 / 12; /* Adjusted from 7/9 to 9/12 */
+    grid-column: 1 / 4;
+    grid-row: 9 / 12;
 }
 
 .tile-certs-small {
-    grid-column: 4 / 8; /* Increased from 3/5 to 4/8 */
-    grid-row: 9 / 12; /* Adjusted from 7/9 to 9/12 */
+    grid-column: 4 / 8;
+    grid-row: 9 / 12;
 }
 
 /* Tile content styles */
@@ -390,15 +430,20 @@ body.light-mode .tile:active {
     align-items: center;
     gap: 8px;
     width: fit-content;
-    
-    /* Smooth effect for back button */
     transform: scale(1);
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* Add glass-like shadow */
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 body.light-mode .back-button {
     background: var(--tile-bg-light);
     border-color: var(--tile-border-light);
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 /* Back button hover - only background change */
@@ -554,7 +599,7 @@ body.light-mode .content-container {
 /* Responsive design */
 @media (max-width: 1200px) {
     .portfolio-wrapper {
-        padding: 15px 30px; /* Adjusted padding */
+        padding: 15px 30px;
     }
 
     .portfolio-container {
@@ -587,6 +632,11 @@ body.light-mode .content-container {
     .tile-text {
         font-size: 0.75em;
     }
+    
+    #glass-layer {
+        /* Ensure glass layer follows container on smaller screens */
+        transition: all 0.3s ease;
+    }
 }
 
 @media (max-width: 768px) {
@@ -601,6 +651,11 @@ body.light-mode .content-container {
         overflow-y: auto;
         position: relative;
     }
+    
+    /* Hide glass layer on mobile for performance */
+    #glass-layer {
+        display: none;
+    }
 
     .portfolio-container {
         width: 100%;
@@ -609,6 +664,8 @@ body.light-mode .content-container {
         flex-direction: column;
         height: auto;
         min-height: 90vh;
+        /* Stronger blur on mobile to compensate for no glass */
+        backdrop-filter: blur(10px);
     }
 
     .left-section {
