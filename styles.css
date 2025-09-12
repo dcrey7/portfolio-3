@@ -285,7 +285,7 @@ body.light-mode .tile:active {
     border-radius: inherit;
     background-size: cover;
     background-position: center;
-    background-image: url('abhi3.jpeg');
+    background-image: url('abhi_effiel.png');
 }
 
 /* Text styles for tiles */
@@ -302,8 +302,12 @@ body.light-mode .tile:active {
 }
 
 .tile-icon {
-    font-size: 2.5em;
+    font-size: 1.5em;
     margin-bottom: 5px;
+    width: 1.5em;
+    height: 1.5em;
+    stroke: currentColor;
+    transition: all 0.3s ease;
 }
 
 .tile-text {
@@ -313,8 +317,10 @@ body.light-mode .tile:active {
 }
 
 .tile-contact .tile-icon {
-    font-size:2.5em;
+    font-size: 1.5em;
     margin-bottom: 1px;
+    width: 1.5em;
+    height: 1.5em;
 }
 
 .tile-contact .tile-text {
@@ -330,6 +336,134 @@ body.light-mode .tile:active {
     justify-content: center;
     width: 100%;
     height: 100%;
+}
+
+/* SVG ICON HOVER ANIMATIONS */
+
+/* Keyframe Animations */
+@keyframes gentle-wave {
+    0%, 100% { transform: translateX(0) rotateZ(0deg); }
+    25% { transform: translateX(-2px) rotateZ(-1deg); }
+    75% { transform: translateX(2px) rotateZ(1deg); }
+}
+
+@keyframes subtle-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+@keyframes float-animation {
+    0%, 100% { transform: translateY(0) rotateZ(0deg); }
+    50% { transform: translateY(-4px) rotateZ(2deg); }
+}
+
+@keyframes rotation-wiggle {
+    0%, 100% { transform: rotateZ(0deg) scale(1); }
+    25% { transform: rotateZ(-3deg) scale(1.02); }
+    75% { transform: rotateZ(3deg) scale(1.02); }
+}
+
+@keyframes rocket-launch {
+    0%, 100% { transform: translateY(0) rotateZ(0deg); }
+    30% { transform: translateY(-2px) rotateZ(-2deg); }
+    60% { transform: translateY(-5px) rotateZ(2deg); }
+}
+
+@keyframes gentle-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes paper-flutter {
+    0%, 100% { transform: rotateZ(0deg) translateY(0); }
+    33% { transform: rotateZ(1deg) translateY(-1px); }
+    66% { transform: rotateZ(-1deg) translateY(-2px); }
+}
+
+@keyframes gentle-rotate {
+    from { transform: rotateZ(0deg); }
+    to { transform: rotateZ(360deg); }
+}
+
+@keyframes globe-rotate {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+@keyframes scale-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+@keyframes envelope-effect {
+    0%, 100% { transform: translateY(0) rotateX(0deg); }
+    50% { transform: translateY(-2px) rotateX(5deg); }
+}
+
+@keyframes ring-vibration {
+    0%, 100% { transform: translateX(0) rotateZ(0deg); }
+    20% { transform: translateX(-1px) rotateZ(-1deg); }
+    40% { transform: translateX(1px) rotateZ(1deg); }
+    60% { transform: translateX(-1px) rotateZ(-0.5deg); }
+    80% { transform: translateX(1px) rotateZ(0.5deg); }
+}
+
+@keyframes arrow-slide {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(2px, -2px); }
+}
+
+/* Icon-specific hover animations */
+.tile-overview:hover .tile-icon {
+    animation: gentle-wave 0.7s ease-in-out infinite;
+}
+
+.tile-experience:hover .tile-icon {
+    animation: subtle-bounce 0.5s ease-in-out infinite;
+}
+
+.tile-education:hover .tile-icon {
+    animation: float-animation 0.8s ease-in-out infinite;
+}
+
+.tile-projects:hover .tile-icon {
+    animation: rotation-wiggle 0.6s ease-in-out infinite;
+}
+
+.tile-skills-small:hover .tile-icon {
+    animation: rocket-launch 0.7s ease-in-out infinite;
+}
+
+.tile-certs-small:hover .tile-icon {
+    animation: gentle-pulse 0.7s ease-in-out infinite;
+}
+
+.tile-resume:hover .tile-icon {
+    animation: paper-flutter 0.5s ease-in-out infinite;
+}
+
+.tile-mode:hover .tile-icon {
+    animation: gentle-rotate 1s linear infinite;
+}
+
+.tile-lang:hover .tile-icon {
+    animation: globe-rotate 1.3s linear infinite;
+}
+
+.tile-github:hover .tile-icon {
+    animation: scale-pulse 0.5s ease-in-out infinite;
+}
+
+.tile-email:hover .tile-icon {
+    animation: envelope-effect 0.7s ease-in-out infinite;
+}
+
+.tile-phone:hover .tile-icon {
+    animation: ring-vibration 0.3s ease-in-out infinite;
+}
+
+.tile-linkedin:hover .tile-icon {
+    animation: arrow-slide 0.5s ease-in-out infinite;
 }
 
 /* Right section grid */
@@ -626,7 +760,9 @@ body.light-mode .content-container {
     }
 
     .tile-icon {
-        font-size: 1.5em;
+        font-size: 1em;
+        width: 1em;
+        height: 1em;
     }
 
     .tile-text {
@@ -762,7 +898,8 @@ body.light-mode .content-container {
     }
 
     .tile-icon {
-        font-size: 1.3em;
+        width: 1em;
+        height: 1em;
     }
 
     .tile-text {

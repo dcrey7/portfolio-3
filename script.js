@@ -254,6 +254,23 @@ const translations = {
 let currentView = 'tiles';
 let currentSection = null;
 
+// SVG icon definitions for mode toggle
+const sunIcon = `<svg class="tile-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4"/>
+    <path d="M12 2v2"/>
+    <path d="M12 20v2"/>
+    <path d="m4.93 4.93 1.41 1.41"/>
+    <path d="m17.66 17.66 1.41 1.41"/>
+    <path d="M2 12h2"/>
+    <path d="M20 12h2"/>
+    <path d="m6.34 17.66-1.41 1.41"/>
+    <path d="m19.07 4.93-1.41 1.41"/>
+</svg>`;
+
+const moonIcon = `<svg class="tile-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3a6.364 6.364 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+</svg>`;
+
 function updateContent() {
     const lang = isEnglish ? 'en' : 'fr';
 
@@ -265,8 +282,12 @@ function updateContent() {
     document.querySelector('.tile-resume .tile-text').textContent = translations.leftTiles.resume[lang];
     const modeToggle = document.querySelector('.tile-mode');
     const isLightMode = document.body.classList.contains('light-mode');
-    modeToggle.querySelector('.tile-text').textContent = isLightMode ? 
-        translations.leftTiles.darkMode[lang] : translations.leftTiles.lightMode[lang];
+    
+    // Update mode toggle icon and text
+    const modeIconContainer = modeToggle.querySelector('.tile-icon').parentNode;
+    modeIconContainer.innerHTML = (isLightMode ? moonIcon : sunIcon) + 
+        `<span class="tile-text">${isLightMode ? translations.leftTiles.darkMode[lang] : translations.leftTiles.lightMode[lang]}</span>`;
+    
     document.querySelector('.tile-lang .tile-text').textContent = isEnglish ? 
         translations.leftTiles.translateFr.en : translations.leftTiles.translateFr.fr;
 
@@ -391,9 +412,10 @@ function toggleMode() {
     
     const modeToggle = document.querySelector('.tile-mode');
     const lang = isEnglish ? 'en' : 'fr';
-    modeToggle.querySelector('.tile-icon').textContent = isLightMode ? '🌑' : '☀️';
-    modeToggle.querySelector('.tile-text').textContent = isLightMode ? 
-        translations.leftTiles.darkMode[lang] : translations.leftTiles.lightMode[lang];
+    
+    // Replace the entire icon and text content
+    modeToggle.innerHTML = (isLightMode ? moonIcon : sunIcon) + 
+        `<span class="tile-text">${isLightMode ? translations.leftTiles.darkMode[lang] : translations.leftTiles.lightMode[lang]}</span>`;
 
     // Update background if you have a function for that
     if (typeof updateBackgroundMode === 'function') {
