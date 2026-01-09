@@ -47,20 +47,14 @@ body.light-mode {
     color: var(--text-color-light);
 }
 
+/* WebGL container - renders background + liquid glass refraction */
 #webgl-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
-}
-
-/* Glass layer positioning */
-#glass-layer {
-    position: fixed;
-    pointer-events: none;
-    z-index: 1;
+    z-index: 0;
 }
 
 /* Main wrapper to center the container */
@@ -77,36 +71,34 @@ body.light-mode {
 }
 
 /* Main container with 20:11 aspect ratio */
+/* LIQUID GLASS: Container is transparent - WebGL handles glass effect */
 .portfolio-container {
     width: 90vw;
     height: 90vh;
     max-width: 1600px;
     aspect-ratio: 20/11;
-    /* UPDATED: Reduced opacity and blur for glass effect */
-    background-color: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(6px);
+    /* Transparent - WebGL renders glass effect */
+    background-color: transparent;
+    backdrop-filter: none;
     border-radius: 24px;
     display: flex;
     overflow: hidden;
-    /* ENHANCED: Better shadows for glass depth */
-    box-shadow: 
-        0 10px 40px rgba(0, 0, 0, 0.4),
-        0 2px 10px rgba(0, 0, 0, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    /* Subtle border for definition */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.3),
+        0 2px 10px rgba(0, 0, 0, 0.15);
     position: relative;
     margin: auto;
 }
 
 body.light-mode .portfolio-container {
-    /* UPDATED: Adjusted for light mode glass */
-    background-color: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(6px);
-    box-shadow: 
-        0 10px 40px rgba(0, 0, 0, 0.15),
-        0 2px 10px rgba(0, 0, 0, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.08);
+    background-color: transparent;
+    backdrop-filter: none;
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.12),
+        0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
 /* Left section - 7/20 of container width */
@@ -141,11 +133,13 @@ body.light-mode .section-divider {
     overflow: hidden;
 }
 
-/* Base tile styles - HOVER AND CLICK EFFECTS */
+/* Base tile styles - LIQUID GLASS EFFECT (WebGL handles refraction) */
 .tile {
-    background: var(--tile-bg-dark);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--tile-border-dark);
+    /* Transparent background - WebGL renders the glass effect behind */
+    background: transparent;
+    backdrop-filter: none;
+    /* Subtle border for definition */
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 16px;
     cursor: pointer;
     display: flex;
@@ -155,63 +149,56 @@ body.light-mode .section-divider {
     text-align: center;
     overflow: hidden;
     position: relative;
+    /* Smooth transitions for hover and click */
+    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
     transform: scale(1);
-    transform-origin: center;
-    /* FIXED: Smoother, faster transitions */
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 
-        0 4px 12px rgba(0, 0, 0, 0.2),
-        0 1px 4px rgba(0, 0, 0, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    /* Performance optimization */
-    will-change: transform, box-shadow;
-    backface-visibility: hidden;
+    /* Subtle shadow for depth */
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
     -webkit-tap-highlight-color: transparent;
 }
 
 body.light-mode .tile {
-    background: var(--tile-bg-light);
-    border-color: var(--tile-border-light);
-    box-shadow: 
-        0 4px 12px rgba(0, 0, 0, 0.1),
-        0 1px 4px rgba(0, 0, 0, 0.08),
+    background: transparent;
+    border-color: rgba(0, 0, 0, 0.12);
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Hover effect - subtle highlight */
+.tile:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.15),
         inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
-/* Hover effect - background color change with enhanced shadow */
-.tile:hover {
-    background: var(--tile-hover-dark);
-    transform: translateY(-2px);
-    box-shadow: 
-        0 8px 24px rgba(0, 0, 0, 0.25),
-        0 3px 8px rgba(0, 0, 0, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
-
-
 body.light-mode .tile:hover {
-    background: var(--tile-hover-light);
-    box-shadow: 
-        0 8px 24px rgba(0, 0, 0, 0.15),
-        0 3px 8px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.18);
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-/* Click/Active effect - scaling animation */
+/* Click/Active effect - subtle press animation */
 .tile:active {
     transform: scale(0.97);
-    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 
-        0 2px 8px rgba(0, 0, 0, 0.2),
-        0 1px 3px rgba(0, 0, 0, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow:
+        0 1px 4px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 body.light-mode .tile:active {
-    box-shadow: 
-        0 2px 8px rgba(0, 0, 0, 0.1),
-        0 1px 3px rgba(0, 0, 0, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: scale(0.97);
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow:
+        0 1px 4px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 /* Left section tile positioning - filling all 11 rows */
@@ -476,13 +463,11 @@ body.light-mode .tile:active {
     height: 100%;
     box-sizing: border-box;
     opacity: 0;
-    transform: scale(0.95);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.3s ease;
 }
 
 .tile-grid-right.active {
     opacity: 1;
-    transform: scale(1);
 }
 
 /* Right section tile positioning */
@@ -538,8 +523,7 @@ body.light-mode .tile:active {
 .content-view {
     height: 100%;
     opacity: 0;
-    transform: translateX(100px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.3s ease;
     display: none;
     flex-direction: column;
 }
@@ -547,13 +531,13 @@ body.light-mode .tile:active {
 .content-view.active {
     display: flex;
     opacity: 1;
-    transform: translateX(0);
 }
 
 .back-button {
-    background: var(--tile-bg-dark);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--tile-border-dark);
+    /* Transparent - WebGL glass effect behind */
+    background: transparent;
+    backdrop-filter: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     color: inherit;
     padding: 10px 20px;
@@ -565,39 +549,40 @@ body.light-mode .tile:active {
     gap: 8px;
     width: fit-content;
     transform: scale(1);
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    /* Add glass-like shadow */
-    box-shadow: 
-        0 2px 8px rgba(0, 0, 0, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 body.light-mode .back-button {
-    background: var(--tile-bg-light);
-    border-color: var(--tile-border-light);
-    box-shadow: 
-        0 2px 8px rgba(0, 0, 0, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    background: transparent;
+    border-color: rgba(0, 0, 0, 0.12);
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-/* Back button hover - only background change */
+/* Back button hover */
 .back-button:hover {
-    background: var(--tile-hover-dark);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.25);
 }
 
 body.light-mode .back-button:hover {
-    background: var(--tile-hover-light);
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.18);
 }
 
-/* Back button click - scaling animation */
+/* Back button click */
 .back-button:active {
-    transform: scale(0.95) translateX(-5px);
-    background: var(--tile-hover-dark);
-    transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: scale(0.95);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 body.light-mode .back-button:active {
-    background: var(--tile-hover-light);
+    transform: scale(0.95);
+    background: rgba(0, 0, 0, 0.08);
 }
 
 .back-icon {
@@ -768,11 +753,6 @@ body.light-mode .content-container {
     .tile-text {
         font-size: 0.75em;
     }
-    
-    #glass-layer {
-        /* Ensure glass layer follows container on smaller screens */
-        transition: all 0.3s ease;
-    }
 }
 
 @media (max-width: 768px) {
@@ -787,11 +767,6 @@ body.light-mode .content-container {
         overflow-y: auto;
         position: relative;
     }
-    
-    /* Hide glass layer on mobile for performance */
-    #glass-layer {
-        display: none;
-    }
 
     .portfolio-container {
         width: 100%;
@@ -800,8 +775,9 @@ body.light-mode .content-container {
         flex-direction: column;
         height: auto;
         min-height: 90vh;
-        /* Stronger blur on mobile to compensate for no glass */
-        backdrop-filter: blur(10px);
+        /* Transparent - WebGL handles glass on mobile too */
+        background-color: transparent;
+        backdrop-filter: none;
     }
 
     .left-section {

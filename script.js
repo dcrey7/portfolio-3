@@ -362,16 +362,22 @@ function toggleLanguage() {
 function showTileGrid() {
     const tileGrid = document.getElementById('tile-grid');
     const contentView = document.getElementById('content-view');
-    
+
+    // Simple fade transition
     contentView.classList.remove('active');
+
     setTimeout(() => {
         contentView.style.display = 'none';
         tileGrid.style.display = 'grid';
-        setTimeout(() => {
+
+        requestAnimationFrame(() => {
             tileGrid.classList.add('active');
-        }, 50);
+            if (typeof updateTilePositions === 'function') {
+                updateTilePositions();
+            }
+        });
     }, 300);
-    
+
     currentView = 'tiles';
     currentSection = null;
 }
@@ -379,28 +385,33 @@ function showTileGrid() {
 function showContent(sectionId) {
     const tileGrid = document.getElementById('tile-grid');
     const contentView = document.getElementById('content-view');
-    
+
     // Hide all sections first
     document.querySelectorAll('.section').forEach(section => {
         section.classList.remove('active');
     });
-    
+
     // Show the selected section
     const selectedSection = document.getElementById(sectionId);
     if (selectedSection) {
         selectedSection.classList.add('active');
     }
-    
-    // Transition from tiles to content
+
+    // Simple fade transition
     tileGrid.classList.remove('active');
+
     setTimeout(() => {
         tileGrid.style.display = 'none';
         contentView.style.display = 'flex';
-        setTimeout(() => {
+
+        requestAnimationFrame(() => {
             contentView.classList.add('active');
-        }, 50);
+            if (typeof updateTilePositions === 'function') {
+                updateTilePositions();
+            }
+        });
     }, 300);
-    
+
     currentView = 'content';
     currentSection = sectionId;
 }
@@ -497,26 +508,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add entrance animations for tiles
-    const allTiles = document.querySelectorAll('.tile');
-    allTiles.forEach((tile, index) => {
-        tile.style.animationDelay = `${index * 0.05}s`;
-        tile.style.animation = 'fadeInScale 0.5s ease forwards';
-    });
 });
-
-// Add CSS animation for tile entrance
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeInScale {
-        from {
-            opacity: 0;
-            transform: scale(0.8);
-        }
-        to {
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
-`;
-document.head.appendChild(style);
